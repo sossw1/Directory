@@ -1,12 +1,11 @@
-import './App.css';
-import 'materialize-css/dist/css/materialize.min.css';
+// import './App.css'; // Commented out because it is not being used at the moment
 import NavBar from './components/NavBar'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <NavBar />
-    </div>
+    </>
   );
 }
 
