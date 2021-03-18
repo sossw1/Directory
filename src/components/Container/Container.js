@@ -1,23 +1,11 @@
-import React, {Component} from 'react';
-import M from 'materialize-css';
+import React from 'react';
 
-class Container extends Component {
-
-  state = {
-    
-  }
-
-  componentDidMount() {
-    M.AutoInit();
-  }
-
-  render() {
-    return (
-      <div className='container'>
+function Container() {
+  return (
+    <div className='container'>
         
-      </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Container;
