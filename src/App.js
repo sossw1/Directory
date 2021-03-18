@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 // Import components
 import NavBar from './components/NavBar/NavBar';
-import Container from './components/Container/Container';
+import SearchBar from './components/SearchBar/SearchBar';
 // Materialize
 import M from 'materialize-css';
 
@@ -19,7 +19,9 @@ class App extends Component {
     return (
       <>
         <NavBar />
-        <Container />
+        <div className='container'>
+          <SearchBar />
+        </div>
       </>
     );
   }
