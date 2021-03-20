@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
+import Sort from './components/Sort';
 // Materialize
 import M from 'materialize-css';
 // API
@@ -23,6 +24,7 @@ class App extends Component {
       <>
         <NavBar />
         <SearchBar />
+        <Sort />
         <SearchResults />
       </>
     );
