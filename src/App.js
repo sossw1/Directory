@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
-import Sort from './components/Sort';
 // Materialize
 import M from 'materialize-css';
 // API
@@ -12,7 +11,23 @@ import API from './utils/API';
 
 class App extends Component {
   state = {
+    search: ""
+  }
 
+  handleInputChange = event => {
+    const { value } = event.target;
+    this.setState({
+      search: value
+    })
+  }
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console.log('test');
+  };
+
+  searchEmployees = query => {
+    
   }
 
   componentDidMount() {
@@ -23,8 +38,7 @@ class App extends Component {
     return (
       <>
         <NavBar />
-        <SearchBar />
-        <Sort />
+        <SearchBar value={this.state.search} handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
         <SearchResults />
       </>
     );
