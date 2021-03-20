@@ -11,7 +11,13 @@ import API from './utils/API';
 
 class App extends Component {
   state = {
-    search: ""
+    search: "",
+    result: {}
+  }
+
+  componentDidMount() {
+    M.AutoInit();
+    this.searchEmployees();
   }
 
   handleInputChange = event => {
@@ -23,15 +29,13 @@ class App extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log('test');
+    console.log(this.state.search);
   };
 
-  searchEmployees = query => {
-    
-  }
-
-  componentDidMount() {
-    M.AutoInit();
+  searchEmployees = () => {
+    API.search()
+      .then(res => this.setState({ result: res.data }))
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -39,7 +43,7 @@ class App extends Component {
       <>
         <NavBar />
         <SearchBar value={this.state.search} handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
-        <SearchResults />
+        <SearchResults results={this.state.results} />
       </>
     );
   }
