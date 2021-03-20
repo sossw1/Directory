@@ -1,8 +1,8 @@
 // Import React and Component
 import React, {Component} from 'react';
 // Import components
-import NavBar from './components/NavBar/NavBar';
-import SearchBar from './components/SearchBar/SearchBar';
+import NavBar from './components/NavBar';
+import SearchBar from './components/SearchBar';
 // Materialize
 import M from 'materialize-css';
 
