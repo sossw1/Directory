@@ -21,9 +21,7 @@ class App extends Component {
     return (
       <>
         <NavBar />
-        <div className='container'>
-          <SearchBar />
-        </div>
+        <SearchBar />
       </>
     );
   }
