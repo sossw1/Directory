@@ -1,8 +1,9 @@
 // Import React and Component
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // Import components
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
+import SearchResults from './components/SearchResults';
 // Materialize
 import M from 'materialize-css';
 // API
@@ -17,11 +18,12 @@ class App extends Component {
     M.AutoInit();
   }
 
-  render () {
+  render() {
     return (
       <>
         <NavBar />
         <SearchBar />
+        <SearchResults />
       </>
     );
   }
