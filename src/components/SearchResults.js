@@ -1,11 +1,12 @@
 import React from 'react';
 import EmployeeCard from './EmployeeCard';
 
-function SearchResults() {
+function SearchResults(props) {
   return (
-    <div className='container'> 
-      {/*map to cards for each employee*/}
-      <EmployeeCard />
+    <div className='container'>
+      <div className='row'>
+
+      </div>
     </div>
   );
 }
