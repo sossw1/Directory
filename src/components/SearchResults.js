@@ -5,8 +5,8 @@ function SearchResults(props) {
   return (
     <div className='container'>
       <div className='row'>
-        {props.employees.map((result, index) => (
-          <EmployeeCard employee={result} key={index} />
+        {props.employees.map((person, index) => (
+          <EmployeeCard data={person} key={index} />
         ))}
       </div>
     </div>
