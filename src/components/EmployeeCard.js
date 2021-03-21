@@ -5,7 +5,7 @@ function EmployeeCard(props) {
     <div className="col s12 m6">
       <div className="card blue darken-4">
         <div className='card-image'>
-          <img src={props.data.picture.large} />
+          <img alt='employee' src={props.data.picture.large} />
         </div>
         <div className="card-content white-text">
           <span className="card-title flow-text">Name: {props.data.name.first} {props.data.name.last}</span>
