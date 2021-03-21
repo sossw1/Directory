@@ -8,9 +8,9 @@ function EmployeeCard(props) {
           <img alt='employee' src={props.data.picture.large} />
         </div>
         <div className="card-content white-text">
-          <span className="card-title flow-text">Name: {props.data.name.first} {props.data.name.last}</span>
-          <p className='flow-text'>City: {props.data.location.city}, {props.data.location.state}</p>
-          <p className='flow-text'>Phone Number: {props.data.phone}</p>
+          <h5>Name: {props.data.name.first} {props.data.name.last}</h5>
+          <p>City: {props.data.location.city}, {props.data.location.state}</p>
+          <p>Phone Number: {props.data.phone}</p>
         </div>
       </div>
     </div>
