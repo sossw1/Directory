@@ -1,9 +1,14 @@
 import React from 'react';
 
-function Sort() {
+function Sort(props) {
   return (
     <div className='input-field'>
-      <button className='btn-small waves-effect waves-lighten blue darken-4'>Sort by Something</button>
+      <button
+        className='btn-small waves-effect waves-lighten blue darken-4'
+        onClick={props.sortData}
+      >
+        Sort by Name
+      </button>
     </div>
   );
 }

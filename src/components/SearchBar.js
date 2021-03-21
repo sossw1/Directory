@@ -13,13 +13,13 @@ function SearchBar(props) {
                 type='search'
                 placeholder='Search by Name'
                 value={props.value}
-                onSubmit={props.handleFormSubmit}
                 onChange={props.handleInputChange}
               />
+              <input type='submit' onSubmit={props.handleFormSubmit} />
             </div>
           </div>
           <div className='col s6'>
-            <Sort />
+            <Sort sortData={props.sortData}/>
           </div>
         </div>
       </form>

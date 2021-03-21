@@ -48,6 +48,21 @@ class Wrapper extends Component {
     });
   }
 
+  sortData = event => {
+    event.preventDefault();
+    let unsorted = this.state.data;
+    let sorted = unsorted.sort((a,b) => {
+      let aFullName = (a.name.first + a.name.last).toLowerCase().trim();
+      let bFullName = (b.name.first + b.name.last).toLowerCase().trim();
+      if(aFullName < bFullName) return -1;
+      if(aFullName > bFullName) return 1;
+      return 0;
+    });
+    this.setState({
+      data: sorted
+    })
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
   };
@@ -56,7 +71,12 @@ class Wrapper extends Component {
     return (
       <>
         <NavBar />
-        <SearchBar value={this.state.search} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
+        <SearchBar
+          value={this.state.search}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+          sortData={this.sortData}
+        />
         <SearchResults employees={this.state.data} />
       </>
     );
