@@ -11,7 +11,8 @@ import API from '../utils/API';
 class Wrapper extends Component {
   state = {
     search: "",
-    data: []
+    originalData: [],
+    data: [],
   }
 
   componentDidMount() {
@@ -21,27 +22,41 @@ class Wrapper extends Component {
 
   searchEmployees = () => {
     API.search()
-      .then(res => this.setState({ data: res.data.results }))
+      .then(res => this.setState({
+        originalData: res.data.results,
+        data: res.data.results
+      }))
       .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
     const { value } = event.target;
+    let query = value.toLowerCase().trim();
+    const originalData = this.state.originalData;
+    let results = [];
+    for(let i=0; i<originalData.length; i++) {
+      let item = originalData[i];
+      let fullName = (item.name.first + " " + item.name.last).toLowerCase();
+      console.log(fullName);
+      if(query === fullName.substring(0,query.length)) {
+        results.push(item);
+      }
+    }
     this.setState({
-      search: value
-    })
+      search: value,
+      data: results
+    });
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state.search);
   };
 
   render() {
     return (
       <>
         <NavBar />
-        <SearchBar value={this.state.search} handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
+        <SearchBar value={this.state.search} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
         <SearchResults employees={this.state.data} />
       </>
     );
