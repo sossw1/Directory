@@ -5,7 +5,9 @@ function SearchResults(props) {
   return (
     <div className='container'>
       <div className='row'>
-
+        {props.employees.map((result, index) => (
+          <EmployeeCard employee={result} key={index} />
+        ))}
       </div>
     </div>
   );
